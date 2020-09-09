@@ -4,9 +4,9 @@ from mcp import MCP
 
 mcp = MCP(2)
 
-X = np.array([[1, 1], [1, 2], [1, 3]])
-y = np.array([2, 3, 4])
+X = np.array([[1, 1], [1, 2], [1, 3], [2,1], [3, 1]])
+y = np.array([1, 2, 3, 2, 3])
 
-mcp.train(X, y, 0.01, 100)
+mcp.train(X, y, 0.1, 1000, 1e-12)
 y = mcp.predict(X)
 print(y)
