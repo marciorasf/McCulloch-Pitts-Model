@@ -58,6 +58,6 @@ myMcp.train(X, y, learningRate, maxIterations, tolerance):
 yApprox = myMcp.predict(X):
 ```
 
-1. **yApprox**: result array obtained by the trained model
+1. `yApprox` is the result array obtained by the trained model
 
 2. **X**: matrix with the input data
