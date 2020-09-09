@@ -9,5 +9,3 @@ y = np.array([1, 2, 3, 2, 3])
 
 mcp.train(X, y, 0.1, 1000, 1e-12)
 y = mcp.predict(X)
-print(y)
-print(mcp.outputWeights)
