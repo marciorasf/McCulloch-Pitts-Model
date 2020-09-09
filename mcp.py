@@ -4,20 +4,20 @@ import numpy as np
 def addBiasColumn(X):
     return np.column_stack((np.ones(X.shape[0]), X))
 
-# It always add the bias term
+# It always add the bias term. The bias term is the first element on weights array
 class MCP:
     def __init__(self, inputDimension, outputFunction=lambda x: x, initialWeights=False):
         self.inputDimension = inputDimension
-        self.weightsDimension = inputDimension + 1
+        self.weights = inputDimension + 1
         self.outputFunction = np.vectorize(outputFunction)
 
         if initialWeights:
             self.outputWeights = np.array(initialWeights)
-            if self.outputWeights.shape[0] != self.weightsDimension:
+            if self.outputWeights.shape[0] != self.weights:
                 raise Exception("Initial weights has wrong dimension")
 
         else:
-            self.outputWeights = np.zeros(self.weightsDimension)
+            self.outputWeights = np.zeros(self.weights)
 
     def train(self, X, y, learningRate=0.01, maxIterations=1, tolerance=1e-9):
         for _ in range(maxIterations):
@@ -45,6 +45,9 @@ class MCP:
             dotProduct = self.outputWeights.dot(addBiasColumn(X).T)
 
         return self.outputFunction(dotProduct)
+
+    def getWeights(self):
+        return self.weights
 
 
 def Adaline(inputDimension, initialWeights=False):
