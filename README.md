@@ -1,4 +1,4 @@
-# simple-mcp
+# MCP - McCulloch - Pitts
 
 ## Features
 - All MCP structure
