@@ -1,7 +1,7 @@
 # MCP - McCulloch - Pitts
 
 ## Features
-- All MCP structure
+- Full MCP structure
   
 - It's simplicity make it great for students that are having the first contact with MCP
   
